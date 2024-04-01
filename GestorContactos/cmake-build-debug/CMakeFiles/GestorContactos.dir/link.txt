@@ -1,0 +1,3 @@
+"H:\Archivos de programas\CLion 2023.3.4\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\GestorContactos.dir/objects.a
+"H:\Archivos de programas\CLion 2023.3.4\bin\mingw\bin\ar.exe" qc CMakeFiles\GestorContactos.dir/objects.a @CMakeFiles\GestorContactos.dir\objects1.rsp
+"H:\Archivos de programas\CLion 2023.3.4\bin\mingw\bin\g++.exe" -g -Wl,--whole-archive CMakeFiles\GestorContactos.dir/objects.a -Wl,--no-whole-archive -o GestorContactos.exe -Wl,--out-implib,libGestorContactos.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\GestorContactos.dir\linkLibs.rsp
