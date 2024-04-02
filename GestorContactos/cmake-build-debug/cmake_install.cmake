@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/branp/CLionProjects/solitario/LabEDD-Practica02/GestorContactos
+# Install script for directory: C:/Users/david/Documents/CUNOC/Ingenieria en Ciencias y Sistemas/2024/01-Senestre/Estructura de Datos/Lab - EDD/Practica 02/Practica02/GestorContactos
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "H:/Archivos de programas/CLion 2023.3.4/bin/mingw/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "C:/Program Files/JetBrains/CLion 2023.3.4/bin/mingw/bin/objdump.exe")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/branp/CLionProjects/solitario/LabEDD-Practica02/GestorContactos/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/david/Documents/CUNOC/Ingenieria en Ciencias y Sistemas/2024/01-Senestre/Estructura de Datos/Lab - EDD/Practica 02/Practica02/GestorContactos/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
