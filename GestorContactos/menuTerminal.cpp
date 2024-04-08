@@ -43,6 +43,7 @@ struct Registro {
 struct Registro2 {
     string columna1a;
     string columna2a;
+    string columna3a;
 };
 vector<Registro> registros;
 vector<Registro2> registros2;
@@ -80,6 +81,12 @@ void mostrarMenuTerminal() {
                 hashTable2.display2();
                 cout << "\n\n--->Tabla Hash De Los VALORES: " << endl;
                 hashTable3.display3();
+                cout << "Registros añadidos:" << endl;
+                for (const auto& registro : registros2) {
+                    cout  << registro.columna1a << ", ";
+                    cout << registro.columna2a << ", ";
+                    cout << registro.columna3a << endl;
+                }
             }
             //Opcion para salir
             if (opcion == "2") {
@@ -267,8 +274,8 @@ void mostrarMenuTerminal() {
                                         if (posicion4 >= 0) {
                                             //std::string valorBuscado = valoresParametros2[posicion4];
                                             //std::cout << "El valor en la posición " << posicion4 << " es: " << valorBuscado << std::endl;
-                                            hashTable3.insert3(valoresParametros2[posicion4]+" "+ token3,token3.length());
-                                            
+                                            hashTable3.insert3(valoresParametros2[posicion4]+" "+ token3,(valoresParametros2[posicion4]+" "+ token3).length());
+                                            registros2.push_back({nombreGrupo,parametros3, valoresParametros2[posicion4] +" "+ token3 });
                                             posicion4++;
                                         } else {
                                             std::cout << "Posición fuera de rango." << std::endl;
@@ -311,7 +318,54 @@ void mostrarMenuTerminal() {
 
 
             //Opcion para buscar contactos
-            if (opcion == "FIND CONTACT IN") {
+            if (opcion.find("FIND CONTACT IN")==0) {
+                // Encontrar la posición de "FIELDS"
+                size_t startPos = opcion.find("FIND CONTACT IN") + 14; // Longitud de "ADD CONTACT IN"
+                size_t endPos = opcion.find("CONTACT-FIELD", startPos);
+
+                // Verificar si se encontraron las palabras clave esperadas
+                if (startPos != string::npos && endPos != string::npos) {
+                    // Extraer el nombre del grupo entre "FIND CONTACT IN" y "CONTACT-FIELD" y eliminar los espacios en blanco adicionales
+                    string nombreGrupo = opcion.substr(startPos+1, endPos - startPos-1);
+                    // Eliminar los espacios en blanco al inicio y al final del nombre del grupo
+                    nombreGrupo.erase(0, nombreGrupo.find_first_not_of(" "));
+                    nombreGrupo.erase(nombreGrupo.find_last_not_of(" ") + 1);
+
+                    // Buscar el grupo en la HashTable
+                    int indiceGrupo = hashTable.search(nombreGrupo);
+
+                    // Verificar si el grupo existe
+                    if (indiceGrupo != -1) {
+                        //Jalamos los parametros
+                        size_t startPos2 = opcion.find("CONTACT-FIELD") + 12; // Longitud de "ADD CONTACT IN"
+                        size_t endPos2 = opcion.find(";", startPos2);
+                        // Verificar si se encontraron las palabras clave esperadas
+                        if (startPos2 != string::npos && endPos2 != string::npos) {
+                            string nombreGrupo3 = opcion.substr(startPos2+1, endPos2 - startPos2-1);
+                            // Eliminar los espacios en blanco al inicio y al final del nombre del grupo
+                            nombreGrupo3.erase(0, nombreGrupo3.find_first_not_of(" "));
+                            nombreGrupo3.erase(nombreGrupo3.find_last_not_of(" ") + 1);
+                            // Reemplazamos "=" por un espacio en blanco
+                            size_t found = nombreGrupo3.find("=");
+                            if (found != std::string::npos) {
+                                nombreGrupo3.replace(found, 1, " ");
+                            }
+
+                            for (const auto& registro : registros2) {
+                                if (registro.columna3a == nombreGrupo3) {
+                                    cout << "El valor:  " << nombreGrupo3 << "  se encuentra en la tabla: " << nombreGrupo<< endl;
+                                    cout << " Los valores del contacto son: " << " ( "<<nombreGrupo<<" - "<<registro.columna2a << " )"<<endl;
+                                }
+                            }
+
+
+                        } else {
+                            cout << "ERROR: Formato incorrecto para encontrar un contacto." << endl;
+                        }
+                    } else {
+                        cout << "ERROR: El grupo '" << nombreGrupo << "' no existe en la HashTable." << endl;
+                    }
+                }
             }
 
         } catch (const invalid_argument& e) {
