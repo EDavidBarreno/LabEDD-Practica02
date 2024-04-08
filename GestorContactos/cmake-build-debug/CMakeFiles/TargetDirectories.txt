@@ -1,3 +1,3 @@
-C:/Users/david/Documents/CUNOC/Ingenieria en Ciencias y Sistemas/2024/01-Senestre/Estructura de Datos/Lab - EDD/Practica 02/Practica02/GestorContactos/cmake-build-debug/CMakeFiles/GestorContactos.dir
-C:/Users/david/Documents/CUNOC/Ingenieria en Ciencias y Sistemas/2024/01-Senestre/Estructura de Datos/Lab - EDD/Practica 02/Practica02/GestorContactos/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/david/Documents/CUNOC/Ingenieria en Ciencias y Sistemas/2024/01-Senestre/Estructura de Datos/Lab - EDD/Practica 02/Practica02/GestorContactos/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/david/Desktop/LabEDD-Practica02/GestorContactos/cmake-build-debug/CMakeFiles/GestorContactos.dir
+C:/Users/david/Desktop/LabEDD-Practica02/GestorContactos/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/david/Desktop/LabEDD-Practica02/GestorContactos/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/david/Documents/CUNOC/Ingenieria en Ciencias y Sistemas/2024/01-Senestre/Estructura de Datos/Lab - EDD/Practica 02/Practica02/GestorContactos
+# Install script for directory: C:/Users/david/Desktop/LabEDD-Practica02/GestorContactos
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/david/Documents/CUNOC/Ingenieria en Ciencias y Sistemas/2024/01-Senestre/Estructura de Datos/Lab - EDD/Practica 02/Practica02/GestorContactos/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/david/Desktop/LabEDD-Practica02/GestorContactos/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
