@@ -81,12 +81,12 @@ void mostrarMenuTerminal() {
                 hashTable2.display2();
                 cout << "\n\n--->Tabla Hash De Los VALORES: " << endl;
                 hashTable3.display3();
-                cout << "Registros añadidos:" << endl;
-                for (const auto& registro : registros2) {
-                    cout  << registro.columna1a << ", ";
-                    cout << registro.columna2a << ", ";
-                    cout << registro.columna3a << endl;
-                }
+                //cout << "Registros añadidos:" << endl;
+                /*for (const auto& registro : registros) {
+                    cout  << registro.columna1 << ", "<< endl;
+                    cout << registro.columna2 << " "<< endl;
+                    //cout << registro.columna3a << endl;
+                }*/
             }
             //Opcion para salir
             if (opcion == "2") {
@@ -351,10 +351,16 @@ void mostrarMenuTerminal() {
                                 nombreGrupo3.replace(found, 1, " ");
                             }
 
+
                             for (const auto& registro : registros2) {
                                 if (registro.columna3a == nombreGrupo3) {
                                     cout << "El valor:  " << nombreGrupo3 << "  se encuentra en la tabla: " << nombreGrupo<< endl;
-                                    cout << " Los valores del contacto son: " << " ( "<<nombreGrupo<<" - "<<registro.columna2a << " )"<<endl;
+                                    for (const auto& registro : registros) {
+                                        if (registro.columna1 == nombreGrupo) {
+                                            cout<<"Con la forma: "<<nombreGrupo<<" ( "<<registro.columna2<<" )"<<endl;
+                                        }
+                                    }
+                                    cout << "Los valores del contacto son: " <<nombreGrupo<<" ( "<<registro.columna2a << " )"<<endl<<endl;
                                 }
                             }
 
